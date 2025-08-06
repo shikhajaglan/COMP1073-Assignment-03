@@ -17,33 +17,29 @@ const animalDiet = document.getElementById("animalDiet");
 // 2. After that add click event listener to button
 factBtn.addEventListener("click", async () => {
     try {
+        // 3. Now fetch a random animal fact
+        const factResponse = await fetch("https://catfact.ninja/fact");
+        const factData = await factResponse.json();
 
-// 3.Now fetch a random animal fact
-const factResponse = await fetch("https://catfact.ninja/fact");
-const factData = await factResponse.json();
+        // 4. Fetching random animal image and details from the WORKING API
+        const imageResponse = await fetch("https://dog.ceo/api/breeds/image/random");
+        const imageData = await imageResponse.json();
 
-// 4. Fetching random animal image and details from the WORKING API
-const animalResponse = await fetch("https://zoo-animal-api.herokuapp.com/animals/rand");
-const animalData = await animalResponse.json();
+        // 5. In addition, updating HTML with fetched data
+        animalName.textContent = "Animal: Dog";
+        animalImage.src = imageData.message;
+        animalImage.alt = "Random Dog";
 
-// 5. In addition, updating HTML with fetched data
-animalName.textContent = animalData.name || "Animal";
-animalImage.src = animalData.image_link || animalData.image || "";
-animalImage.alt = animalData.name || "Animal Image";
+        animalFact.textContent = "Cat Fact: " + (factData.fact || "No fact available.");
+        animalHabitat.textContent = "Habitat: Domestic";
+        animalDiet.textContent = "Diet: Omnivore";
 
-animalFact.textContent = "Fact: " + (factData.fact || "No fact available.");
-animalHabitat.textContent = "Habitat: " + (animalData.habitat || "Unknown");
-animalDiet.textContent = "Diet: " + (animalData.diet || "Unknown");
+        // 6. Showing the card section
+        animalCard.classList.remove("hidden");
 
-// 6. Showing the card section
-
-animalCard.classList.remove("hidden");
-} 
-catch (error) {
-
-// 7. Furthermore, adding a fetch for handling errors
-console.error("Error fetching data:", error);
-alert("Unable to fetch data at this time. Please try again later.");
-}
+    } catch (error) {
+        // 7. Furthermore, adding a fetch for handling errors
+        console.error("Error fetching data:", error);
+        alert("Unable to fetch data at this time. Please try again later.");
+    }
 });
-
