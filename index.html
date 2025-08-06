@@ -1,0 +1,36 @@
+<!-- Made by: Shikha Shikha
+Assignment 3: Third party APIs-Integration
+Topic Name: Random Animal fats and pictures
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Animal Fun Facts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- First of all adding application Container and heading -->
+    <div class="app-container">
+        <h1>Random Animal Facts and images</h1>
+        
+        <!-- Adding a button for triggering API calls -->
+        <button id="getFactBtn">Show Animal</button>
+
+        <!-- After that adding a animal card that will show the animal information -->
+        <div id="animalCard" class="hidden">
+            <h2 id="animalName"></h2>
+            <img id="animalImage" alt="Animal Image">
+            <p id="animalFact"></p>
+            <p id="animalHabitat"></p>
+            <p id="animalDiet"></p>
+        </div>
+    </div>
+
+    <!-- Then I connected the javascript file with the index.html file -->
+    <script src="script.js"></script>
+</body>
+</html>
