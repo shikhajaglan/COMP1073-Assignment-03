@@ -1,0 +1,52 @@
+/* Style.css
+Date = 2025-08-06 
+Assignment 3: Styling for Random Animal Facts and images
+Main idea: Lets creating a clean, centered card layout with the responsive design
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+/*Adding the app container design */
+.app-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+/*Adding button color, size and design*/
+button {
+    padding: 10px 20px;
+    background: #3498db;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+/*After that I am adding the background color of the button*/
+button:hover {
+    background: #2980b9;
+}
+
+img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+/* Adding the font style of the button */
+#animalFact {
+    font-style: italic;
+    margin-top: 10px;
+}
